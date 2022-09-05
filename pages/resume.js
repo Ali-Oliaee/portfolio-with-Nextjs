@@ -1,6 +1,7 @@
 import { Timeline } from "@mui/lab";
 import { Button } from "@mui/material";
 import { useTranslation } from "react-i18next";
+import PageWrapper from "../components/page-wrapper";
 // import SmoothList from "react-smooth-list";
 // import SkillItem from "../../components/skill";
 // import cv from "../../cv.pdf";
@@ -16,47 +17,48 @@ function ResumePage() {
   };
 
   return (
-    <div className={styles.resume_page}>
-      <div>
-        {/* <SmoothList> */}
-        <div className={styles.experience}>
-          <h1 className={styles.title}>{t("experience")}</h1>
-          <p>{t("experience-description")}</p>
+    <PageWrapper>
+      <div className={styles.resume_page}>
+        <div>
+          {/* <SmoothList> */}
+          <div className={styles.experience}>
+            <h1 className={styles.title}>{t("experience")}</h1>
+            <p>{t("experience-description")}</p>
+          </div>
+          {/* </SmoothList> */}
+          {/* <SmoothList delay={200}> */}
+          <div className={styles.education}>
+            <h2 className={styles.title}>{t("education")}</h2>
+            <p>{t("education-description")}</p>
+          </div>
+          {/* </SmoothList> */}
+          {/* <SmoothList delay={350}> */}
+          <div className={styles.personality}>
+            <h2 className="title">{t("personality")}</h2>
+            <ul>
+              <li>{t("trustworthy")}</li>
+              <li>{t("teamwork")}</li>
+              <li>{t("learner")}</li>
+              <li>{t("listener")}</li>
+            </ul>
+            <Button onClick={downloadCv} className={styles.download_cv_button}>
+              {t("Download-cv")}
+            </Button>
+          </div>
+          {/* </SmoothList> */}
         </div>
-        {/* </SmoothList> */}
-        {/* <SmoothList delay={200}> */}
-        <div className={styles.education}>
-          <h2 className={styles.title}>{t("education")}</h2>
-          <p>{t("education-description")}</p>
-        </div>
-        {/* </SmoothList> */}
-        {/* <SmoothList delay={350}> */}
-        <div className={styles.personality}>
-          <h2 className="title">{t("personality")}</h2>
-          <ul>
-            <li>{t("trustworthy")}</li>
-            <li>{t("teamwork")}</li>
-            <li>{t("learner")}</li>
-            <li>{t("listener")}</li>
-          </ul>
-          <Button onClick={downloadCv} className={styles.download_cv_button}>
-            {t("Download-cv")}
-          </Button>
-        </div>
-        {/* </SmoothList> */}
-      </div>
-      <div className={styles.skills}>
-        {/* <SmoothList> */}
-        <h2 className={styles.title}>{t("skills")}</h2>
-        <Timeline position="alternate" style={{ direction: "ltr" }}>
-          {/* <SkillItem
+        <div className={styles.skills}>
+          {/* <SmoothList> */}
+          <h2 className={styles.title}>{t("skills")}</h2>
+          <Timeline position="alternate" style={{ direction: "ltr" }}>
+            {/* <SkillItem
             title="OOP"
             description="c++, algoritms, data structures"
-          />
+            />
           <SkillItem title="HTML" description="web basics" />
           <SkillItem
-            title="CSS"
-            description="grid, flexbox, mediaQuery, sass"
+          title="CSS"
+          description="grid, flexbox, mediaQuery, sass"
           />
           <SkillItem title="GIT" description="basic usage, github, gitlab" />
           <SkillItem
@@ -78,11 +80,12 @@ function ResumePage() {
           <SkillItem
             title="other"
             description="Scrum, trello, slack, googling, office" */}
-          {/* /> */}
-        </Timeline>
-        {/* </SmoothList> */}
+            {/* /> */}
+          </Timeline>
+          {/* </SmoothList> */}
+        </div>
       </div>
-    </div>
+    </PageWrapper>
   );
 }
 
