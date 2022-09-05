@@ -1,5 +1,15 @@
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 import PageWrapper from "../components/page-wrapper";
+
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common", "footer"])),
+    },
+  };
+}
 
 export default function Home() {
   const { t } = useTranslation("common");
