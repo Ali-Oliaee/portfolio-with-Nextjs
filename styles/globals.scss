@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "shabnam";
+  src: url("../public/shabnam.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+body {
+  margin: 0;
+  font-family: "shabnam", "Andika", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  min-height: 100vh;
+  font-size: larger;
+  background-image: url("../public/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  overflow-x: hidden;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  color: #e5e5e5;
+
+  .content {
+      align-self: center;
+      width: 90%;
+  }
+}
