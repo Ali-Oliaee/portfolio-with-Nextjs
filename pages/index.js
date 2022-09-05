@@ -3,6 +3,7 @@ import PageWrapper from "../components/page-wrapper";
 import Particles from "react-tsparticles";
 import { loadTrianglesPreset } from "tsparticles-preset-triangles";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import styles from "../styles/Home.module.scss";
 
 export async function getStaticProps({ locale }) {
   return {
@@ -31,12 +32,14 @@ export default function Home() {
   };
 
   return (
-    <PageWrapper className="home-page">
-      <Particles options={options} init={customInit} />
-      <h1 className="name">
-        {t("name")} <span className="family">{t("family")}</span>
-      </h1>
-      <p className="description">{t("home-description")}</p>
+    <PageWrapper>
+      <div className={styles.home_page}>
+        <Particles options={options} init={customInit} />
+        <h1 className={styles.name}>
+          {t("name")} <span className={styles.family}>{t("family")}</span>
+        </h1>
+        <p className={styles.description}>{t("home-description")}</p>
+      </div>
     </PageWrapper>
   );
 }

@@ -1,6 +1,6 @@
-function PageWrapper({ children, className }) {
+function PageWrapper({ children }) {
   return (
-    <div className={`page-wrapper ${className}`}>
+    <div className={`page-wrapper`}>
       <div className="content">{children}</div>
     </div>
   );
