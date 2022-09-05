@@ -1,0 +1,62 @@
+.resume_page {
+    color: #e5e5e5;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 0;
+    margin-inline-start: 50px;
+  
+    @media screen and (max-width: 500px) {
+      flex-direction: column-reverse;
+      margin-inline-start: 0;
+  
+      p,
+      .title,
+      .personality {
+        text-align: center;
+      }
+    }
+  
+    .download_cv_button {
+      margin: 20px 0;
+    }
+  
+    .MuiTypography-root {
+      color: #fca311;
+    }
+  
+    .MuiTimelineOppositeContent-positionAlternate {
+      color: #e5e5e5;
+    }
+  
+    .title {
+      color: #fca311;
+    }
+  
+    .skills {
+      min-width: 290px;
+  
+      .title {
+        text-align: center;
+      }
+    }
+  
+    p {
+      text-indent: 30px;
+      margin: 10px;
+  
+      @media screen and (max-width: 500px) {
+        text-indent: 0;
+      }
+    }
+  
+    .personality {
+      ul {
+        margin: 10px 0;
+  
+        li {
+          list-style-type: none;
+        }
+      }
+    }
+  }
