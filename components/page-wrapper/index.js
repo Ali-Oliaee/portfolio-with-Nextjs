@@ -1,3 +1,4 @@
+import Footer from "../footer.js";
 import Header from "../header";
 
 function PageWrapper({ children }) {
@@ -5,6 +6,7 @@ function PageWrapper({ children }) {
     <div className={`page-wrapper`}>
       <Header />
       <div className="content">{children}</div>
+      <Footer />
     </div>
   );
 }
