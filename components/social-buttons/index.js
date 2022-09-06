@@ -32,7 +32,12 @@ function SocialButtons() {
         target="_blank"
         component="a"
       >
-        <Image src="/gitlab-logo.svg" width={22} height={22} alt="gitlab" />
+        <Image
+          src="/images/gitlab-logo.svg"
+          width={22}
+          height={22}
+          alt="gitlab"
+        />
       </IconButton>
       <IconButton className="icon-button" href="mailto: alioliaee31@gmail.com>">
         <GoogleIcon />
@@ -68,7 +73,7 @@ function SocialButtons() {
         component="a"
       >
         <Image
-          src="/quera-logo.svg"
+          src="/images/quera-logo.svg"
           alt="quera"
           className="icon-button"
           width={42}
