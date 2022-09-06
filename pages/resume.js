@@ -43,7 +43,7 @@ function ResumePage() {
             </SmoothList>
             <SmoothList delay={350}>
               <div className={styles.personality}>
-                <h2 className="title">{t("personality")}</h2>
+                <h2 className={styles.title}>{t("personality")}</h2>
                 <ul>
                   <li>{t("trustworthy")}</li>
                   <li>{t("teamwork")}</li>

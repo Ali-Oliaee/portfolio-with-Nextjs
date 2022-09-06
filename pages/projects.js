@@ -33,7 +33,7 @@ function PortfolioPage() {
         <title>Ali Oliaee | Portfolio</title>
       </Head>
       <PageWrapper>
-        <div className={styles.Portfolio_age}>
+        <div className={styles.portfolio_page}>
           <SmoothList>
             <h1>{t("portfolio")}</h1>
             <div className={styles.container}>
@@ -100,13 +100,15 @@ function PortfolioPage() {
                 </Collapse>
               </List>
             </div>
-            <Button
-              href="https://github.com/ali-oliaee?tab=repositories"
-              target="_blank"
-              style={{ textAlign: "center", display: "block" }}
-            >
-              {t("show-all")}
-            </Button>
+            <div className={styles.button}>
+              <Button
+                href="https://github.com/ali-oliaee?tab=repositories"
+                target="_blank"
+                className={styles.button}
+              >
+                {t("show-all")}
+              </Button>
+            </div>
           </SmoothList>
         </div>
       </PageWrapper>
