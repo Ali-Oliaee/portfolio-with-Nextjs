@@ -140,3 +140,36 @@ body {
 .MuiTimelineOppositeContent-positionAlternate {
   color: #e5e5e5;
 }
+
+.contact-card {
+  border: 1px solid #e5e5e5;
+  background: rgba(125, 125, 125, 0.4);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  margin: 10px;
+  color: #e5e5e5;
+  height: 100px;
+  width: 300px;
+
+  &:last-child{
+    height: 150px;
+
+    .social-media {
+      width: 100%;
+    }
+  }
+  .card-icon {
+    margin-inline-end: 20px;
+    background-color: rgba(0, 0, 0, 0.637);
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #fca311;
+
+  }
+}
