@@ -1,5 +1,6 @@
 import { useTranslation } from "next-i18next";
 import PageWrapper from "../components/page-wrapper";
+import SocialButtons from "../components/social-buttons";
 import Particles from "react-tsparticles";
 import { loadTrianglesPreset } from "tsparticles-preset-triangles";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -39,6 +40,7 @@ export default function Home() {
           {t("name")} <span className={styles.family}>{t("family")}</span>
         </h1>
         <p className={styles.description}>{t("home-description")}</p>
+        <SocialButtons />
       </div>
     </PageWrapper>
   );
