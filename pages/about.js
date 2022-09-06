@@ -47,9 +47,9 @@ function AboutPage() {
             <p>{t("about-description")} </p>
             <p>
               {t("contact-text")}
-              <Button href="/contact" component="a" LinkComponent={Link}>
-                {t("contact-me")}
-              </Button>
+              <Link href="/contact">
+                <Button component="a">{t("contact-me")}</Button>
+              </Link>
             </p>
           </div>
         </SmoothList>

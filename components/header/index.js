@@ -16,7 +16,7 @@ import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import { useTranslation } from "next-i18next";
-// import SwitchLanguage from "../switch-language";
+import SwitchLanguage from "../switch-language";
 
 function DesktopHeader() {
   const { t } = useTranslation();
@@ -32,43 +32,23 @@ function DesktopHeader() {
         textColor="primary"
         indicatorColor="primary"
       >
-        <Tab
-          label={t("home")}
-          LinkComponent={Link}
-          component="a"
-          href="/"
-          value={0}
-        />
-        <Tab
-          label={t("about")}
-          component="a"
-          LinkComponent={Link}
-          href="/about"
-          value={1}
-        />
-        <Tab
-          label={t("resume")}
-          component="a"
-          LinkComponent={Link}
-          href="/resume"
-          value={2}
-        />
-        <Tab
-          label={t("portfolio")}
-          component="a"
-          LinkComponent={Link}
-          href="/projects"
-          value={3}
-        />
-        <Tab
-          label={t("contact")}
-          component="a"
-          LinkComponent={Link}
-          href="/contact"
-          value={4}
-        />
+        <Link href="/" passHref>
+          <Tab label={t("home")} value={0} />
+        </Link>
+        <Link href="/about" passHref>
+          <Tab label={t("about")} value={1} />
+        </Link>
+        <Link href="/resume" passHref>
+          <Tab label={t("resume")} value={2} />
+        </Link>
+        <Link href="/projects" passHref>
+          <Tab label={t("portfolio")} value={3} />
+        </Link>
+        <Link href="/contact" passHref>
+          <Tab label={t("contact")} value={4} />
+        </Link>
       </Tabs>
-      {/* <SwitchLanguage /> */}
+      <SwitchLanguage />
     </div>
   );
 }
@@ -83,74 +63,55 @@ function MobileHeader() {
         <MenuIcon className="burger-icon" />
       </IconButton>
       <Drawer
-        anchor={i18n.dir() === "rtl" ? "right" : "left"}
+        // anchor={i18n.dir() === "rtl" ? "right" : "left"}
+        anchor="left"
         open={visible}
         onClose={() => setVisible(false)}
         className="mobile-header-drawer"
       >
         <List className="list">
-          <ListItem
-            button
-            Linkcomponent={Link}
-            component="a"
-            href="/"
-            onClick={() => setVisible(false)}
-          >
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary={t("home")} />
-          </ListItem>
-          <ListItem
-            button
-            Linkcomponent={Link}
-            component="a"
-            href="/about"
-            onClick={() => setVisible(false)}
-          >
-            <ListItemIcon>
-              <InfoOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText primary={t("about")} />
-          </ListItem>
-          <ListItem
-            button
-            Linkcomponent={Link}
-            component="a"
-            href="/resume"
-            onClick={() => setVisible(false)}
-          >
-            <ListItemIcon>
-              <FeedOutlinedIcon />
-            </ListItemIcon>
-            <ListItemText primary={t("resume")} />
-          </ListItem>
-          <ListItem
-            button
-            Linkcomponent={Link}
-            component="a"
-            href="/projects"
-            onClick={() => setVisible(false)}
-          >
-            <ListItemIcon>
-              <ArrowCircleDownIcon />
-            </ListItemIcon>
-            <ListItemText primary={t("portfolio")} />
-          </ListItem>
-          <ListItem
-            button
-            Linkcomponent={Link}
-            component="a"
-            href="/contact"
-            onClick={() => setVisible(false)}
-          >
-            <ListItemIcon>
-              <CallIcon />
-            </ListItemIcon>
-            <ListItemText primary={t("contact")} />
-          </ListItem>
+          <Link href="/" passHref>
+            <ListItem button onClick={() => setVisible(false)}>
+              <ListItemIcon>
+                <HomeIcon />
+              </ListItemIcon>
+              <ListItemText primary={t("home")} />
+            </ListItem>
+          </Link>
+          <Link href="/about" passHref>
+            <ListItem button onClick={() => setVisible(false)}>
+              <ListItemIcon>
+                <InfoOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary={t("about")} />
+            </ListItem>
+          </Link>
+          <Link href="/resume" passHref>
+            <ListItem button onClick={() => setVisible(false)}>
+              <ListItemIcon>
+                <FeedOutlinedIcon />
+              </ListItemIcon>
+              <ListItemText primary={t("resume")} />
+            </ListItem>
+          </Link>
+          <Link href="/projects" passHref>
+            <ListItem button onClick={() => setVisible(false)}>
+              <ListItemIcon>
+                <ArrowCircleDownIcon />
+              </ListItemIcon>
+              <ListItemText primary={t("portfolio")} />
+            </ListItem>
+          </Link>
+          <Link href="/contact" passHref>
+            <ListItem button onClick={() => setVisible(false)}>
+              <ListItemIcon>
+                <CallIcon />
+              </ListItemIcon>
+              <ListItemText primary={t("contact")} />
+            </ListItem>
+          </Link>
         </List>
-        {/* <SwitchLanguage className="mobile-header-switch-language" /> */}
+        <SwitchLanguage />
       </Drawer>
     </div>
   );
@@ -158,8 +119,7 @@ function MobileHeader() {
 
 function Header() {
   const isMobile = useMediaQuery("(max-width: 680px)");
-  // return isMobile ? <MobileHeader /> : <DesktopHeader />;
-  return <DesktopHeader />;
+  return isMobile ? <MobileHeader /> : <DesktopHeader />;
 }
 
 export default Header;
