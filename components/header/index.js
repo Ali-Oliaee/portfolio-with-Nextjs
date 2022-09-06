@@ -1,6 +1,6 @@
+import { useState, useEffect } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { useState } from "react";
 import Link from "next/link";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import IconButton from "@mui/material/IconButton";
@@ -15,13 +15,35 @@ import ListItem from "@mui/material/ListItem";
 import List from "@mui/material/List";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import SwitchLanguage from "../switch-language";
 
 function DesktopHeader() {
   const { t } = useTranslation();
+  const router = useRouter();
   const [value, setValue] = useState(0);
-  const handleChange = (event, newValue) => setValue(newValue);
+  const handleChange = () => {
+    switch (router.asPath) {
+      case "/":
+        setValue(0);
+        break;
+      case "/about":
+        setValue(1);
+        break;
+      case "/resume":
+        setValue(2);
+        break;
+      case "/projects":
+        setValue(3);
+        break;
+      default:
+        setValue(4);
+        break;
+    }
+  };
+
+  useEffect(() => handleChange(), [router.asPath]);
 
   return (
     <div className="desktop-header">
@@ -54,7 +76,7 @@ function DesktopHeader() {
 }
 
 function MobileHeader() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [visible, setVisible] = useState(false);
 
   return (
@@ -63,8 +85,7 @@ function MobileHeader() {
         <MenuIcon className="burger-icon" />
       </IconButton>
       <Drawer
-        // anchor={i18n.dir() === "rtl" ? "right" : "left"}
-        anchor="left"
+        anchor={i18n.dir() === "rtl" ? "right" : "left"}
         open={visible}
         onClose={() => setVisible(false)}
         className="mobile-header-drawer"
