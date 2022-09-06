@@ -1,0 +1,27 @@
+.portfolio_page {
+    color: #e5e5e5;
+    flex: 1;
+  
+    h1 {
+      text-align: center;
+      margin: 20px;
+    }
+  
+    .container {
+      .more_projects {
+        transition: 0.3s ease-in-out;
+        width: 100%;
+      }
+  
+      .show {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  
+    .button {
+      margin: 0 auto;
+    }
+  }

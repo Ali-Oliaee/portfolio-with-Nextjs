@@ -5,7 +5,7 @@ import PageWrapper from "../components/page-wrapper";
 import SmoothList from "react-smooth-list";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SkillItem from "../components/skill";
-// import cv from "../../cv.pdf";
+// import cv from "../public/cv.pdf";
 import styles from "../styles/Resume.module.scss";
 
 export async function getStaticProps({ locale }) {
