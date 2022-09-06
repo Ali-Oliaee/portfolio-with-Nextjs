@@ -23,6 +23,7 @@
     "react-smooth-list": "^1.0.2",
     "react-tsparticles": "^2.2.4",
     "sass": "^1.54.8",
+    "swiper": "^8.3.2",
     "tsparticles": "^2.2.4",
     "tsparticles-preset-triangles": "^2.2.4"
   },
