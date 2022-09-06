@@ -4,7 +4,7 @@ import Select from "@mui/material/Select";
 import { useTranslation } from "next-i18next";
 import router from "next/router";
 
-function SwitchLanguage({ className }) {
+function SwitchLanguage() {
   const { t, i18n } = useTranslation();
 
   const changeLocale = (locale) => {
@@ -19,7 +19,7 @@ function SwitchLanguage({ className }) {
   };
 
   return (
-    <div className={className ?? "switch-language"}>
+    <div className="switch-language" dir={i18n.dir()}>
       <span className="language">{t("language")}:</span>
       <FormControl variant="standard">
         <Select

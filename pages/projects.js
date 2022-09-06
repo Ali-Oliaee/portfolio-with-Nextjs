@@ -41,10 +41,10 @@ function PortfolioPage() {
                 effect="coverflow"
                 grabCursor
                 centeredSlides
-                // autoplay={{
-                //   delay: 2500,
-                //   disableOnInteraction: false,
-                // }}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
                 slidesPerView="auto"
                 coverflowEffect={{
                   rotate: 50,
@@ -53,7 +53,7 @@ function PortfolioPage() {
                   modifier: 1,
                 }}
                 pagination
-                modules={[EffectCoverflow, Pagination]}
+                modules={[Autoplay, EffectCoverflow, Pagination]}
               >
                 {mainProjects.map(({ title, description, demo, code, src }) => (
                   <SwiperSlide key={title} className="swiper_slide">

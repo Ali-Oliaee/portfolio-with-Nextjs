@@ -43,6 +43,7 @@ function DesktopHeader() {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => handleChange(), [router.asPath]);
 
   return (
@@ -90,7 +91,7 @@ function MobileHeader() {
         onClose={() => setVisible(false)}
         className="mobile-header-drawer"
       >
-        <List className="list">
+        <List className="mobile-header-list" dir={i18n.dir()}>
           <Link href="/" passHref>
             <ListItem button onClick={() => setVisible(false)}>
               <ListItemIcon>
