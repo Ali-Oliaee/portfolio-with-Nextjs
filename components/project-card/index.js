@@ -1,13 +1,12 @@
 import Button from "@mui/material/Button";
 import { useTranslation } from "next-i18next";
+import Image from "next/image";
 
-function ProjectCard({ src, title, description, demo, code, className }) {
+function ProjectCard({ src, title, description, demo, code }) {
   const { t } = useTranslation();
   return (
-    <div
-      className={`project-card ${className}`}
-      style={{ backgroundImage: `url(${src})` }}
-    >
+    <div className="project-card">
+      <Image src={src} alt="project" width={300} height={300} />
       <div className="description-bar">
         <h3>{title}</h3>
         <p>{description}</p>
