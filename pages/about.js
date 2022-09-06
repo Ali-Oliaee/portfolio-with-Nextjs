@@ -39,8 +39,8 @@ function AboutPage() {
               <Divider className={styles.divider}>
                 <Image
                   src="/images/mine.jpg"
-                  width={120}
-                  height={120}
+                  width={300}
+                  height={300}
                   alt="my picture"
                   className="my_picture"
                 />
