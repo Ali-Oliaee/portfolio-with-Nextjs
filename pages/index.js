@@ -2,6 +2,7 @@ import { useTranslation } from "next-i18next";
 import PageWrapper from "../components/page-wrapper";
 import SocialButtons from "../components/social-buttons";
 import Particles from "react-tsparticles";
+import Head from "next/head";
 import { loadTrianglesPreset } from "tsparticles-preset-triangles";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import styles from "../styles/Home.module.scss";
@@ -33,15 +34,20 @@ export default function Home() {
   };
 
   return (
-    <PageWrapper>
-      <div className={styles.home_page}>
-        <Particles options={options} init={customInit} />
-        <h1 className={styles.name}>
-          {t("name")} <span className={styles.family}>{t("family")}</span>
-        </h1>
-        <p className={styles.description}>{t("home-description")}</p>
-        <SocialButtons />
-      </div>
-    </PageWrapper>
+    <>
+      <Head>
+        <title>Ali Oliaee | علی علیایی</title>
+      </Head>
+      <PageWrapper>
+        <div className={styles.home_page}>
+          <Particles options={options} init={customInit} />
+          <h1 className={styles.name}>
+            {t("name")} <span className={styles.family}>{t("family")}</span>
+          </h1>
+          <p className={styles.description}>{t("home-description")}</p>
+          <SocialButtons />
+        </div>
+      </PageWrapper>
+    </>
   );
 }

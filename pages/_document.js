@@ -10,6 +10,11 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link href="/favicon.png" rel="icon" />
+          <meta name="description" content="my portfolio page" />
+          <meta
+            name="keywords"
+            content="Ali, ali oliaee, oliaee, علی, علی علیایی, علیایی, portfolio"
+          />
         </Head>
         <body>
           <Main />
