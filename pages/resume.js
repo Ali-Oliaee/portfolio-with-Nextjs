@@ -6,7 +6,7 @@ import SmoothList from "react-smooth-list";
 import Head from "next/head";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import SkillItem from "../components/skill";
-// import cv from "../public/cv.pdf";
+import { saveAs } from "file-saver";
 import styles from "../styles/Resume.module.scss";
 
 export async function getStaticProps({ locale }) {
@@ -19,12 +19,7 @@ export async function getStaticProps({ locale }) {
 
 function ResumePage() {
   const { t } = useTranslation();
-  const downloadCv = () => {
-    const anchor = document.createElement("a");
-    anchor.setAttribute("href", cv);
-    anchor.setAttribute("download", "");
-    anchor.click();
-  };
+  const saveFile = () => saveAs("/cv.pdf", "AliOliaee.pdf");
 
   return (
     <>
@@ -56,8 +51,8 @@ function ResumePage() {
                   <li>{t("listener")}</li>
                 </ul>
                 <Button
-                  onClick={downloadCv}
                   className={styles.download_cv_button}
+                  onClick={saveFile}
                 >
                   {t("Download-cv")}
                 </Button>
